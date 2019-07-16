@@ -4,18 +4,18 @@
 
 -   Utilizar **apenas JavaScript** puro para resolver o problema (**não é permitido o uso de jquery**).
 
--   Estilo fica ao critério do candidato.
+-   Estilo fica ao critério do candidato, e não é o foco principal do teste.
 
--   Só será aceito o uso de bibliotecas de estilo e clientes HTTP (axios, fetch, etc), qualquer outro tipo acarreta em desclassificação.
+-   Só será aceito o uso de bibliotecas de estilo e clientes HTTP (axios, fetch, etc).
 
 
 ## Desafio
 
-O objetivo é fazer uma tela em que o usuário possa criar, excluir, e listar seus posts.
+O objetivo é fazer uma tela em que o usuário possa criar, excluir, e listar suas postagens.
 
-Espera-se que o usuário possa digitar um `id` de usuário e carregar os posts referente a esse `id`.
+Espera-se que o usuário possa digitar um `id` (identificador unico) de usuário e carregar os posts referente a esse `id`.
 
-Se nada for digitado, ocorre o carregamento dos posts de todos os usuários.
+Se nada for digitado, ocorre o carregamento das postagens de todos os usuários.
 
 ## Documentação da API
 
