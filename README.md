@@ -33,6 +33,7 @@
 - **E.6** Utilizando a api da viacep (https://viacep.com.br/) e o seu cep como entrada imprima o seu endereço no formato `'ENDERECO, NUMERO, CIDADE/ESTADO'`.
 
 **Para os seguintes exercícios** considere o array de objetos:
+
 ```
 [
     {id: 1, nome: 'juca', sobrenome: 'da silva', idade: 42},
@@ -42,15 +43,15 @@
 ]
 ```
 
-- **E.7** Imprima uma mensagem de saudação com o nome completo para cada um dos objetos. O nome deve ter a primeira letra maiúscula. 
+- **E.7** Imprima uma mensagem de saudação com o nome completo para cada um dos objetos. O nome deve ter a primeira letra maiúscula.
 
 ```
-Ex.: 
+Ex.:
 Olá, Fulano de tal!
 Olá, Juca da silva!
 ...
 ```
- 
+
 - **E.8** Imprima a soma das idades (dica: reduce)
 
 - **E.9** Imprima se existe algum objeto menos 25 anos.
@@ -59,72 +60,45 @@ Olá, Juca da silva!
 
 - **E.11** Ordene o array de forma decrescente por idade, em caso de empate o desempate é pelo id.
 
-# (WIP)
+# Exercício de front-end
+
+## Desafio
+
+O objetivo é fazer uma tela em que o usuário verá uma listagem de postagens.
+Cada postagem terá uma listagem com seus referentes comentários.
+Um post pode ter ou não comentário, dependendo do que vier da API.
 
 ## Documentação da API
 
-**ATENÇÃO:** Como se trata de uma `fake` API, ela não mantém os dados, portanto todos os dados que vierem de retorno não vão conter os dados reais que foram enviados em requisições POST.
-
--   API RESTful
-
--   Url: `https://jsonplaceholder.typicode.com/posts`
-
--   Para fazer as requisições HTTP recomendamos o uso da biblioteca [axios](https://github.com/axios/axios) usando o seu link de cdn.
+- API RESTful
+- URL: https://jsonplaceholder.typicode.com/
+- Para fazer as requisições HTTP recomendamos o uso da biblioteca [axios](https://github.com/axios/axios) usando o seu link de cdn.
 
 Exemplo de requisição:
 
 ```javascript
-  axios.get('/posts/1')
-  .then(function (response) {
+axios
+  .get("/posts")
+  .then(function(response) {
     // handle success
     console.log(response);
   })
-  .catch(function (error) {
+  .catch(function(error) {
     // handle error
     console.log(error);
   })
-  .then(function () {
+  .then(function() {
     // always executed
   });
 ```
 
+## Endpoints
 
-#### Endpoints
-
-##### Listagem de posts
-
-GET `https://jsonplaceholder.typicode.com/posts`
-
-##### Listagem de posts por usuário
-
-GET `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
-
-VARIABLES
-
-`userId` : Id do usuário que deseja listar os posts
-
-##### Criar um post
-
-POST `https://jsonplaceholder.typicode.com/posts`
-
-BODY
-
-```javascript
-{
-  title: 'foo',
-  body: 'bar',
-  userId: 1
-}
-```
-
-##### Excluir um post
-
-DELETE `https://jsonplaceholder.typicode.com/posts/${postId}`
-
-VARIABLES
-
-`postId` : Id do post que deseja excluir
+GET `https://jsonplaceholder.typicode.com/posts` (busca a listagem de postagens)
+GET `https://jsonplaceholder.typicode.com/comments` (busca a listagem de comentários)
 
 ## Observações
 
-O que mais será levado em conta é o código JavaScript escrito no teste. Não será levado em consideração o código css. Ainda assim, esperamos uma tela com um minímo de estilo.
+O que mais será levado em conta é o código JavaScript escrito no teste. Não será levado em consideração o código css. Ainda assim, esperamos uma tela com um minímo de estilo para diferenciar o que é postagem e o que é comentário.
+
+Dica: Para saber quais os comentários de cada postagem, é necessário fazer a comparação do `id` que vem na postagem, com o campo `postId` que vem nos comentários. Qual são iguais, significa que aquele comentário é referente aquela postagem.
